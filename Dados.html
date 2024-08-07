@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenação de Dados</title>
+</head>
+<body>
+    <!--Criar os botões para interação do site-->
+    <input type="number" placeholder="informe somente numeros" name="n1" id="n1">
+    <input type="number" placeholder="informe somente numeros" name="n2" id="n2">
+    <input type="number" placeholder="informe somente numeros" name="n3" id="n3">
+    <button onclick="Ordenar()">Ordenar</button>
+    <p><label id="resultado"></label></p>
+    <script>
+        function Ordenar(){
+            var n1 = parseInt(document.getElementById('n1').value)
+            var n2 = parseInt(document.getElementById('n2').value)
+            var n3 = parseInt(document.getElementById('n3').value)
+
+            var saida = ''
+            if(n1 == n2 && n2 == n3){
+                saida = 'Os numeros são iguais'
+            }
+            else if(n1 < n2 && n2 < n3){
+                saida = `${n1}, ${n2} e ${n3}`
+            }
+            else if(n1 < n3 && n3 < n2){
+                saida = `${n1}, ${n3} e ${n2}`
+            }
+            else if(n2 < n1 && n1 < n3){
+                saida = `${n2}, ${n1} e ${n3}`
+            }
+            else if(n2 < n3 && n3 < n1){
+                saida = `${n2}, ${n3} e ${n1}`
+            }
+            else if(n3 < n2 && n2 < n1){
+                saida = `${n3}, ${n2} e ${n1}`
+            }
+            else if(n3 < n1 && n1 < n2){
+                saida = `${n3}, ${n1} e ${n2}`
+            }
+            document.getElementById('resultado').innerText = saida
+            alert(saida)
+        }
+    </script>
+    
+</body>
+</html>
